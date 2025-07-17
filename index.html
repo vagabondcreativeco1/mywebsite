@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Terry Austin – Cinematographer</title>
+  <!-- Inter font like Zak Mulligan -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body {
+    /* Reset */
+    body, html {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000;
+      padding: 0;
+      background-color: #000;
       color: #fff;
+      font-family: 'Inter', sans-serif;
     }
 
-    /* Top Bar */
-    .top-bar {
-      background: #fff;
+    /* Top bar */
+    header.top-bar {
+      background-color: #fff;
       color: #000;
       display: flex;
       justify-content: space-between;
@@ -24,39 +28,61 @@
       z-index: 1000;
     }
 
+    /* Name and title container */
     .name-title {
-      font-size: 18px;
-    }
-    .name-title .name {
-      font-weight: bold;
-      margin-right: 6px;
-    }
-
-    .nav-menu {
       display: flex;
-      gap: 30px;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      font-weight: 400;
       font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #444;
     }
-    .nav-menu a {
-      text-decoration: none;
+
+    /* Menu */
+    nav.menu {
+      display: flex;
+      gap: 32px;
+    }
+
+    nav.menu a {
+      font-weight: 400;
+      font-size: 16px;
       color: #000;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
-    /* Active / hovered menu item */
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      font-weight: bold;
-      border-bottom: 2px solid #000;
+    nav.menu a:hover,
+    nav.menu a.active {
+      font-weight: 700;
+      border-bottom-color: #000;
     }
 
-    /* Video grid */
+    /* Video grid styles */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 40px;
+      gap: 0;
+      padding: 20px 40px; /* padding to match top bar sides */
     }
+
     .video-grid iframe {
       width: 100%;
       height: 200px;
@@ -64,50 +90,76 @@
       display: block;
     }
 
+    /* Responsive adjustments */
     @media (max-width: 1024px) {
       .video-grid {
         grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
       }
     }
+
     @media (max-width: 600px) {
       .video-grid {
         grid-template-columns: 1fr;
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Bar with Name & Menu -->
-  <div class="top-bar">
+  <!-- Top bar -->
+  <header class="top-bar">
     <div class="name-title">
-      <span class="name">Terry Austin</span><span class="title">Cinematographer</span>
+      <div class="name">TERRY AUSTIN</div>
+      <div class="title">CINEMATOGRAPHER</div>
     </div>
-    <nav class="nav-menu">
-      <a href="#" class="active">Home</a>
-      <a href="#">Portfolio</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+    <nav class="menu">
+      <a href="#work" class="active">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
     </nav>
-  </div>
+  </header>
 
-  <!-- Video Grid -->
-  <div class="video-grid">
+  <!-- Video Portfolio Grid -->
+  <div class="video-grid" id="work">
     <iframe src="https://www.youtube.com/embed/mOjhG97DpT8?rel=0&modestbranding=1" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/8pjkSDZoL-s?rel=0&modestbranding=1" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/ujDt_stiT4w?rel=0&modestbranding=1" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/oomCksxHPjE?rel=0&modestbranding=1" allowfullscreen></iframe>
 
     <iframe src="https://www.youtube.com/embed/tzC6nloNFDs?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/U8AFTeBjxhY?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/PAeliJA25-0?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/4DEW1qlblw0?rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/U8AFTeBjxhY?si=VsZ7dTMT8it9REu5&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/PAeliJA25-0?si=FG65Lm9oqmDWbALS&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/4DEW1qlblw0?si=MQ_WEiS2UcFT_oaz&rel=0&modestbranding=1" allowfullscreen></iframe>
 
-    <iframe src="https://www.youtube.com/embed/YKkwBj9pFDg?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/MNHLduM2W8k?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/8xxDju42OGU?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/-OzMIOBhDig?rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/YKkwBj9pFDg?si=5Pb9j7OZYJFQhz1Z&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/MNHLduM2W8k?si=UvfoRae2eAhe6ZKn&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/8xxDju42OGU?si=jnRp_7L7LL9ko6jF&rel=0&modestbranding=1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/-OzMIOBhDig?si=knKOw2fToGSELznI&rel=0&modestbranding=1" allowfullscreen></iframe>
   </div>
 
+  <!-- Optional About section -->
+  <section id="about" style="padding: 40px; color: white; max-width: 800px; margin: auto;">
+    <h2>About Terry Austin</h2>
+    <p>This is where you can add your bio or info about your cinematography work.</p>
+  </section>
+
+  <!-- Optional Contact section -->
+  <section id="contact" style="padding: 40px; color: white; max-width: 800px; margin: auto;">
+    <h2>Contact</h2>
+    <p>You can add contact info or a form here.</p>
+  </section>
+
+  <script>
+    // Simple script to toggle active menu on click
+    const menuLinks = document.querySelectorAll('nav.menu a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        menuLinks.forEach(l => l.classList.remove('active'));
+        e.target.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
