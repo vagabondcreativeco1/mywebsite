@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Terry Austin – Video Portfolio</title>
   <style>
-    /* Reset */
+    /* Reset some basic styles */
     * {
       box-sizing: border-box;
     }
@@ -27,14 +27,13 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      font-family: Arial, sans-serif;
     }
 
     /* Menu on left */
     nav.menu {
       display: flex;
       gap: 32px;
-      flex-grow: 1;
+      flex-grow: 1; /* pushes name/title right */
     }
 
     nav.menu a {
@@ -59,17 +58,26 @@
     /* Name & title on right */
     .name-title {
       display: flex;
-      align-items: baseline;
+      align-items: baseline;  /* aligns bottom of letters */
       gap: 16px;
       white-space: nowrap;
     }
 
-    .name, .title {
+    .name {
       font-weight: 700;
       font-size: 28px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #000;
+    }
+
+    .title {
+      font-weight: 400; /* normal weight */
+      font-size: 28px;  /* same size as .name */
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #444;
+      /* optional slight vertical adjustment if needed */
+      /* margin-bottom: 2px; */
     }
 
     /* Video grid container */
@@ -83,10 +91,10 @@
       background: #000;
     }
 
-    /* Videos with correct 16:9 aspect ratio */
+    /* Videos style */
     .video-grid iframe {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      height: 200px;
       border: none;
       display: block;
     }
