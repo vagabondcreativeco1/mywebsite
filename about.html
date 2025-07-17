@@ -2,18 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About - Terry Austin</title>
+  <title>About – Terry Austin</title>
   <style>
     /* Reset */
     * {
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       background: #000;
-      color: #fff;
       font-family: Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     /* Top bar */
@@ -33,7 +42,7 @@
     nav.menu {
       display: flex;
       gap: 32px;
-      flex-grow: 1; /* pushes name/title right */
+      flex-grow: 1;
     }
 
     nav.menu a {
@@ -68,65 +77,54 @@
       font-size: 28px;
       text-transform: uppercase;
       letter-spacing: 2px;
+      color: #000;
     }
 
     .title {
-      font-weight: 400;
-      font-size: 28px; /* same size as name, but not bold */
+      font-weight: 400; /* not bold */
+      font-size: 28px; /* same size as name */
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #444;
+      line-height: 1;
     }
 
-    /* Content wrapper */
-    main.content {
+    /* Main content container */
+    main {
+      flex-grow: 1;
       max-width: 900px;
-      margin: 80px auto 60px;
+      margin: 80px auto 80px;
       padding: 0 20px;
     }
 
-    main.content h1 {
-      font-size: 48px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
-      color: #fff;
-    }
-
-    main.content p {
+    /* Bio text style */
+    .bio {
       font-size: 18px;
       line-height: 1.6;
-      color: #ccc;
-      max-width: 600px;
-    }
-
-    main.content a {
       color: #fff;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    main.content a:hover {
-      color: #aaa;
+      white-space: pre-line;
     }
 
-    /* Responsive padding for small screens */
+    /* Responsive adjustments */
     @media (max-width: 600px) {
       header.top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        flex-wrap: wrap;
+        padding: 15px 20px;
       }
       nav.menu {
-        flex-wrap: wrap;
-        gap: 16px;
-        flex-grow: 0;
+        flex-grow: 1;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 10px;
       }
       .name-title {
-        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
       }
-      main.content {
-        margin: 40px 20px 60px;
+      main {
+        margin: 40px 15px;
+        font-size: 16px;
       }
     }
   </style>
@@ -136,7 +134,7 @@
     <nav class="menu">
       <a href="index.html">WORK</a>
       <a href="about.html" class="active">ABOUT</a>
-      <a href="index.html#contact">CONTACT</a>
+      <a href="#contact">CONTACT</a>
     </nav>
     <div class="name-title">
       <div class="name">TERRY AUSTIN</div>
@@ -144,12 +142,18 @@
     </div>
   </header>
 
-  <main class="content">
-    <h1>About</h1>
-    <p>
-      Hi, I’m Terry Austin — a cinematographer passionate about telling stories through compelling visuals and cinematic craft. I specialize in crafting immersive video content with a focus on mood, lighting, and storytelling.<br><br>
-      Feel free to explore my <a href="index.html">work</a> or <a href="index.html#contact">get in touch</a> for collaborations.
-    </p>
+  <main>
+    <div class="bio">
+      Terry Austin is a cinematographer recognized for his compelling visual storytelling across documentary, commercial, and narrative film projects. With a keen eye for crafting immersive cinematic experiences, Terry’s work consistently aims to inspire, educate, and move audiences by harnessing the power of image and narrative.
+
+      Throughout his career, Terry has collaborated with diverse clients and creative teams, contributing to projects that explore meaningful themes and evoke emotional resonance. His expertise spans all phases of production—from conceptual development to post-production—allowing him to shape stories that challenge perspectives and ignite change.
+
+      Terry’s background in documentary filmmaking informs his authentic approach to cinematography, blending technical mastery with a deep understanding of story’s ability to influence culture and society. He believes every frame is an opportunity to connect viewers with ideas that matter, and every light, angle, and movement serves the greater purpose of the narrative.
+
+      His commercial portfolio includes work for leading brands where storytelling drives brand purpose and audience engagement, while his passion projects often tackle social issues with a cinematic voice designed to educate and empower.
+
+      Dedicated to elevating the craft of cinematography as a tool for transformation, Terry Austin continues to pursue projects that push creative boundaries and amplify voices that inspire change.
+    </div>
   </main>
 </body>
 </html>
