@@ -9,11 +9,20 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       background: #000;
-      color: #fff;
       font-family: Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden; /* prevent horizontal scroll */
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     /* Top bar */
@@ -24,6 +33,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
+      flex-shrink: 0;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -77,25 +87,29 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #444;
-      line-height: 1; /* keep vertical tight */
-      /* Ensures baseline alignment matches name */
+      line-height: 1;
     }
 
-    /* Video grid container - full width */
+    /* Main fills remaining height */
+    main {
+      flex-grow: 1;
+      display: flex;
+    }
+
+    /* Video grid container fills all remaining space */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
       gap: 0;
-      padding: 0;
-      max-width: 100vw; /* full viewport width */
-      margin: 40px 0 60px 0;
-      background: #000;
+      width: 100vw;
+      height: 100%;
     }
 
-    /* Videos fill grid cell fully, no spacing */
+    /* Videos fill grid cells with no spacing */
     .video-grid iframe {
       width: 100%;
-      height: 250px; /* taller for better aspect */
+      height: 100%;
       border: none;
       display: block;
     }
@@ -110,10 +124,6 @@
     @media (max-width: 600px) {
       .video-grid {
         grid-template-columns: 1fr;
-      }
-
-      .video-grid iframe {
-        height: 200px;
       }
     }
   </style>
