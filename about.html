@@ -4,41 +4,152 @@
   <meta charset="UTF-8" />
   <title>About - Terry Austin</title>
   <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-      padding: 80px 40px;
     }
-    h1 {
+
+    /* Top bar */
+    header.top-bar {
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Menu on left */
+    nav.menu {
+      display: flex;
+      gap: 32px;
+      flex-grow: 1; /* pushes name/title right */
+    }
+
+    nav.menu a {
+      font-weight: 400;
+      font-size: 16px;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav.menu a:hover,
+    nav.menu a.active {
+      font-weight: 700;
+      border-bottom-color: #000;
+    }
+
+    /* Name & title on right */
+    .name-title {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      white-space: nowrap;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      font-weight: 400;
+      font-size: 28px; /* same size as name, but not bold */
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #444;
+    }
+
+    /* Content wrapper */
+    main.content {
+      max-width: 900px;
+      margin: 80px auto 60px;
+      padding: 0 20px;
+    }
+
+    main.content h1 {
       font-size: 48px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 40px;
+      color: #fff;
     }
-    p {
-      max-width: 600px;
-      line-height: 1.6;
+
+    main.content p {
       font-size: 18px;
+      line-height: 1.6;
       color: #ccc;
+      max-width: 600px;
     }
-    a {
+
+    main.content a {
       color: #fff;
       text-decoration: underline;
       cursor: pointer;
     }
-    a:hover {
+    main.content a:hover {
       color: #aaa;
+    }
+
+    /* Responsive padding for small screens */
+    @media (max-width: 600px) {
+      header.top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      nav.menu {
+        flex-wrap: wrap;
+        gap: 16px;
+        flex-grow: 0;
+      }
+      .name-title {
+        align-items: center;
+      }
+      main.content {
+        margin: 40px 20px 60px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>About</h1>
-  <p>
-    Hi, I’m Terry Austin — a cinematographer passionate about telling stories through compelling visuals and cinematic craft. I specialize in crafting immersive video content with a focus on mood, lighting, and storytelling.<br><br>
-    Feel free to explore my <a href="index.html#work">work</a> or <a href="index.html#contact">get in touch</a> for collaborations.
-  </p>
+  <header class="top-bar">
+    <nav class="menu">
+      <a href="index.html">WORK</a>
+      <a href="about.html" class="active">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+    <div class="name-title">
+      <div class="name">TERRY AUSTIN</div>
+      <div class="title">CINEMATOGRAPHER</div>
+    </div>
+  </header>
+
+  <main class="content">
+    <h1>About</h1>
+    <p>
+      Hi, I’m Terry Austin — a cinematographer passionate about telling stories through compelling visuals and cinematic craft. I specialize in crafting immersive video content with a focus on mood, lighting, and storytelling.<br><br>
+      Feel free to explore my <a href="index.html">work</a> or <a href="index.html#contact">get in touch</a> for collaborations.
+    </p>
+  </main>
 </body>
 </html>
