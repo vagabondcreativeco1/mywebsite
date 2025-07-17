@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Terry Austin – Cinematographer</title>
-  <!-- Inter font like Zak Mulligan -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset */
+    /* Reset and base */
     body, html {
       margin: 0;
       padding: 0;
@@ -28,32 +27,11 @@
       z-index: 1000;
     }
 
-    /* Name and title container */
-    .name-title {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-    }
-
-    .name {
-      font-weight: 700;
-      font-size: 28px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .title {
-      font-weight: 400;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #444;
-    }
-
-    /* Menu */
+    /* Menu on left */
     nav.menu {
       display: flex;
       gap: 32px;
+      order: 1;
     }
 
     nav.menu a {
@@ -75,12 +53,35 @@
       border-bottom-color: #000;
     }
 
-    /* Video grid styles */
+    /* Name and title on right */
+    .name-title {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      order: 2;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      font-weight: 400;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #444;
+    }
+
+    /* Video grid: no gap between videos */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      padding: 20px 40px; /* padding to match top bar sides */
+      gap: 0; /* no spacing */
+      padding: 20px 40px;
     }
 
     .video-grid iframe {
@@ -90,7 +91,7 @@
       display: block;
     }
 
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 1024px) {
       .video-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -110,15 +111,16 @@
 
   <!-- Top bar -->
   <header class="top-bar">
-    <div class="name-title">
-      <div class="name">TERRY AUSTIN</div>
-      <div class="title">CINEMATOGRAPHER</div>
-    </div>
     <nav class="menu">
       <a href="#work" class="active">WORK</a>
       <a href="#about">ABOUT</a>
       <a href="#contact">CONTACT</a>
     </nav>
+
+    <div class="name-title">
+      <div class="name">TERRY AUSTIN</div>
+      <div class="title">CINEMATOGRAPHER</div>
+    </div>
   </header>
 
   <!-- Video Portfolio Grid -->
@@ -139,20 +141,19 @@
     <iframe src="https://www.youtube.com/embed/-OzMIOBhDig?si=knKOw2fToGSELznI&rel=0&modestbranding=1" allowfullscreen></iframe>
   </div>
 
-  <!-- Optional About section -->
+  <!-- About and Contact -->
   <section id="about" style="padding: 40px; color: white; max-width: 800px; margin: auto;">
     <h2>About Terry Austin</h2>
     <p>This is where you can add your bio or info about your cinematography work.</p>
   </section>
 
-  <!-- Optional Contact section -->
   <section id="contact" style="padding: 40px; color: white; max-width: 800px; margin: auto;">
     <h2>Contact</h2>
     <p>You can add contact info or a form here.</p>
   </section>
 
   <script>
-    // Simple script to toggle active menu on click
+    // Toggle active menu item
     const menuLinks = document.querySelectorAll('nav.menu a');
     menuLinks.forEach(link => {
       link.addEventListener('click', e => {
