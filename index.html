@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Terry Austin – Cinematographer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Terry Austin – Video Portfolio</title>
   <style>
-    /* Reset and base */
-    body, html {
+    /* Reset some basic styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      padding: 0;
-      background-color: #000;
+      background: #000;
       color: #fff;
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
     }
 
     /* Top bar */
@@ -31,7 +33,7 @@
     nav.menu {
       display: flex;
       gap: 32px;
-      order: 1;
+      flex-grow: 1; /* pushes name/title right */
     }
 
     nav.menu a {
@@ -53,12 +55,12 @@
       border-bottom-color: #000;
     }
 
-    /* Name and title on right */
+    /* Name & title on right */
     .name-title {
       display: flex;
       align-items: baseline;
       gap: 16px;
-      order: 2;
+      white-space: nowrap;
     }
 
     .name {
@@ -76,14 +78,18 @@
       color: #444;
     }
 
-    /* Video grid: no gap between videos */
+    /* Video grid container */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0; /* no spacing */
-      padding: 20px 40px;
+      gap: 0; /* no space between videos */
+      padding: 0;
+      max-width: 1200px;
+      margin: 40px auto 60px;
+      background: #000;
     }
 
+    /* Videos style */
     .video-grid iframe {
       width: 100%;
       height: 200px;
@@ -95,72 +101,46 @@
     @media (max-width: 1024px) {
       .video-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 20px;
       }
     }
 
     @media (max-width: 600px) {
       .video-grid {
         grid-template-columns: 1fr;
-        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Top bar -->
   <header class="top-bar">
     <nav class="menu">
       <a href="#work" class="active">WORK</a>
       <a href="#about">ABOUT</a>
       <a href="#contact">CONTACT</a>
     </nav>
-
     <div class="name-title">
       <div class="name">TERRY AUSTIN</div>
       <div class="title">CINEMATOGRAPHER</div>
     </div>
   </header>
 
-  <!-- Video Portfolio Grid -->
-  <div class="video-grid" id="work">
-    <iframe src="https://www.youtube.com/embed/mOjhG97DpT8?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/8pjkSDZoL-s?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/ujDt_stiT4w?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/oomCksxHPjE?rel=0&modestbranding=1" allowfullscreen></iframe>
+  <main>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/mOjhG97DpT8?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/8pjkSDZoL-s?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ujDt_stiT4w?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/oomCksxHPjE?rel=0&modestbranding=1" allowfullscreen></iframe>
 
-    <iframe src="https://www.youtube.com/embed/tzC6nloNFDs?rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/U8AFTeBjxhY?si=VsZ7dTMT8it9REu5&rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/PAeliJA25-0?si=FG65Lm9oqmDWbALS&rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/4DEW1qlblw0?si=MQ_WEiS2UcFT_oaz&rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/tzC6nloNFDs?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/U8AFTeBjxhY?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/PAeliJA25-0?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/4DEW1qlblw0?rel=0&modestbranding=1" allowfullscreen></iframe>
 
-    <iframe src="https://www.youtube.com/embed/YKkwBj9pFDg?si=5Pb9j7OZYJFQhz1Z&rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/MNHLduM2W8k?si=UvfoRae2eAhe6ZKn&rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/8xxDju42OGU?si=jnRp_7L7LL9ko6jF&rel=0&modestbranding=1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/-OzMIOBhDig?si=knKOw2fToGSELznI&rel=0&modestbranding=1" allowfullscreen></iframe>
-  </div>
-
-  <!-- About and Contact -->
-  <section id="about" style="padding: 40px; color: white; max-width: 800px; margin: auto;">
-    <h2>About Terry Austin</h2>
-    <p>This is where you can add your bio or info about your cinematography work.</p>
-  </section>
-
-  <section id="contact" style="padding: 40px; color: white; max-width: 800px; margin: auto;">
-    <h2>Contact</h2>
-    <p>You can add contact info or a form here.</p>
-  </section>
-
-  <script>
-    // Toggle active menu item
-    const menuLinks = document.querySelectorAll('nav.menu a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        menuLinks.forEach(l => l.classList.remove('active'));
-        e.target.classList.add('active');
-      });
-    });
-  </script>
+      <iframe src="https://www.youtube.com/embed/YKkwBj9pFDg?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/MNHLduM2W8k?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/8xxDju42OGU?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/-OzMIOBhDig?rel=0&modestbranding=1" allowfullscreen></iframe>
+    </div>
+  </main>
 </body>
 </html>
