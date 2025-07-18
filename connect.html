@@ -4,22 +4,40 @@
   <meta charset="UTF-8" />
   <title>Connect – Terry Austin</title>
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
       padding: 0;
-      background: #000;
-      color: #fff;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
       font-family: Arial, sans-serif;
-      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Video background */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     header.top-bar {
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.95);
       color: #000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
+      z-index: 10;
+      position: relative;
     }
 
     nav.menu {
@@ -68,44 +86,60 @@
     }
 
     .connect-section {
-      max-width: 700px;
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
       margin: 100px auto;
-      padding: 0 20px;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
     }
 
     .connect-section h1 {
       font-size: 36px;
       letter-spacing: 2px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
-    .connect-section p {
+    .connect-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .connect-section input,
+    .connect-section textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .connect-section button {
+      padding: 12px;
       font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 40px;
+      background: #fff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
     }
 
-    .connect-section a.email-link {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    .social-links a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 18px;
-      border-bottom: 1px solid transparent;
-      transition: 0.3s;
-    }
-
-    .social-links a:hover {
-      border-bottom: 1px solid #fff;
+    .connect-section button:hover {
+      background: #ddd;
     }
   </style>
 </head>
 <body>
 
+  <!-- Background video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header -->
   <header class="top-bar">
     <nav class="menu">
       <a href="index.html">WORK</a>
@@ -118,19 +152,22 @@
     </div>
   </header>
 
+  <!-- Connect form -->
   <main class="connect-section">
     <h1>Let’s Connect</h1>
-    <p>
-      I’m available for collaborations, commissions, and conversations.<br />
-      Reach out anytime:<br /><br />
-      <a href="mailto:vagabondcreativeco@gmail.com" class="email-link">vagabondcreativeco@gmail.com</a>
-    </p>
+    <form action="https://formsubmit.co/vagabondcreativeco@gmail.com" method="POST">
+      <!-- Honeypot (spam trap) -->
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/vagabond_creative/" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com/in/terryhaustin/" target="_blank">LinkedIn</a>
-      <a href="https://www.youtube.com/@TerryAustinFilms" target="_blank">YouTube</a>
-    </div>
+      <!-- Success page redirect (optional) -->
+      <input type="hidden" name="_next" value="https://vagabondcreativeco1.github.io/mywebsite/thankyou.html">
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </main>
 
 </body>
