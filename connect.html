@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Connect – Terry Austin</title>
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -14,30 +13,17 @@
     body, html {
       height: 100%;
       font-family: Arial, sans-serif;
+      background: #000;
       color: #fff;
-      overflow: hidden;
-    }
-
-    /* Video background */
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
     }
 
     header.top-bar {
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: #fff;
       color: #000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      z-index: 10;
-      position: relative;
     }
 
     nav.menu {
@@ -86,12 +72,10 @@
     }
 
     .connect-section {
-      position: relative;
-      z-index: 1;
       max-width: 600px;
       margin: 100px auto;
       padding: 40px;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.85);
       border-radius: 12px;
     }
 
@@ -99,6 +83,7 @@
       font-size: 36px;
       letter-spacing: 2px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .connect-section form {
@@ -133,13 +118,6 @@
 </head>
 <body>
 
-  <!-- Background video -->
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="video/background.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Header -->
   <header class="top-bar">
     <nav class="menu">
       <a href="index.html">WORK</a>
@@ -152,15 +130,12 @@
     </div>
   </header>
 
-  <!-- Connect form -->
   <main class="connect-section">
     <h1>Let’s Connect</h1>
     <form action="https://formsubmit.co/vagabondcreativeco@gmail.com" method="POST">
       <!-- Honeypot (spam trap) -->
       <input type="text" name="_honey" style="display:none">
       <input type="hidden" name="_captcha" value="false">
-
-      <!-- Success page redirect (optional) -->
       <input type="hidden" name="_next" value="https://vagabondcreativeco1.github.io/mywebsite/thankyou.html">
 
       <input type="text" name="name" placeholder="Your Name" required />
