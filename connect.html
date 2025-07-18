@@ -71,58 +71,44 @@
       color: #444;
     }
 
-    .connect-section {
-      max-width: 900px;
-      margin: 80px auto 120px;
-      padding: 40px 30px;
-      background-color: rgba(0, 0, 0, 0.85);
-      border-radius: 12px;
-    }
-
-    /* Flex container for logo + content side by side */
     .connect-content {
-      display: flex;
-      gap: 40px;
-      align-items: stretch;
-    }
+  display: flex;
+  gap: 80px; /* doubled from 40px */
+  align-items: stretch;
+}
 
-    /* Logo container */
-    .logo-container {
-      flex: 0 0 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.logo-container {
+  flex: 0 0 900px; /* triple from 300px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .logo-container img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-      display: block;
-    }
+.connect-section h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin-bottom: 0;  /* remove bottom margin to align with bio */
+  /* removed text-align:center */
+  /* We'll do horizontal layout with bio snippet */
+  flex: 0 0 auto;
+  margin-right: 40px; /* spacing between h1 and bio */
+  align-self: flex-start;
+}
 
-    /* Content area next to logo takes remaining width */
-    .contact-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+.connect-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32px; /* spacing below header row */
+}
 
-    .connect-section h1 {
-      font-size: 36px;
-      letter-spacing: 2px;
-      margin-bottom: 24px;
-      text-align: center;
-      width: 100%;
-    }
+.bio-snippet {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0; /* reset margin */
+  color: #ddd;
+  flex: 1; /* fill remaining space next to h1 */
+}
 
-    /* Bio snippet styling */
-    .bio-snippet {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 32px;
-      color: #ddd;
-    }
 
     /* Contact info line */
     .contact-info {
