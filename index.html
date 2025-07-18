@@ -2,92 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vagabond Creative Co</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terry Austin – Video Portfolio</title>
   <style>
+    /* Reset */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
+      margin: 0;
+      padding: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
       background: #000;
+      font-family: Arial, sans-serif;
       color: #fff;
+      overflow-x: hidden; /* prevent horizontal scroll */
     }
 
-    .fullscreen-menu {
-      display: none;
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    @media (max-width: 768px) {
-      .fullscreen-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100vh;
-        background-color: #000;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999;
-        padding-top: 80px;
-        gap: 40px;
-        text-align: center;
-      }
+    /* Top bar */
+    header.top-bar {
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-      .fullscreen-menu a {
-        text-decoration: none;
-        color: white;
-        font-size: 24px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
+    /* Menu on left */
+    nav.menu {
+      display: flex;
+      gap: 32px;
+      flex-grow: 1; /* push name/title right */
+    }
 
-      .fullscreen-menu img {
-        position: absolute;
-        bottom: 40px;
-        width: 120px;
-        opacity: 0.85;
-      }
+    nav.menu a {
+      font-weight: 400;
+      font-size: 16px;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
 
-      .desktop-content {
-        display: none;
+    nav.menu a:hover,
+    nav.menu a.active {
+      font-weight: 700;
+      border-bottom-color: #000;
+    }
+
+    /* Name & title on right */
+    .name-title {
+      display: flex;
+      align-items: baseline; /* baseline align text */
+      gap: 16px;
+      white-space: nowrap;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #000;
+    }
+
+    .title {
+      font-weight: 400; /* NOT bold */
+      font-size: 28px;  /* same size as name */
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #444;
+      line-height: 1;
+    }
+
+    /* Main fills remaining height */
+    main {
+      flex-grow: 1;
+      display: flex;
+    }
+
+    /* Video grid container fills all remaining space */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 0;
+      width: 100vw;
+      height: 100%;
+    }
+
+    /* Videos fill grid cells with no spacing */
+    .video-grid iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (min-width: 769px) {
-      .fullscreen-menu {
-        display: none;
-      }
-
-      .desktop-content {
-        display: block;
-        padding: 80px;
-        text-align: center;
+    @media (max-width: 600px) {
+      .video-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
+  <header class="top-bar">
+    <nav class="menu">
+      <a href="#featured" class="active">FEATURED</a>
+      <a href="about.html">ABOUT</a>
+      <a href="connect.html">CONTACT</a>
 
-  <!-- Fullscreen Mobile Menu -->
-  <div class="fullscreen-menu">
-    <a href="index.html">Featured</a>
-    <a href="about.html">About</a>
-    <a href="connect.html">Contact</a>
-    <img src="images/LOGO-WHITE-2.png" alt="Vagabond Logo" />
-  </div>
+    </nav>
+    <div class="name-title">
+      <div class="name">TERRY AUSTIN</div>
+      <div class="title">CINEMATOGRAPHER</div>
+    </div>
+  </header>
 
-  <!-- Desktop Content (Hidden on Mobile) -->
-  <div class="desktop-content">
-    <h1>Welcome to Vagabond Creative Co</h1>
-    <p>This is the desktop site. Resize your screen or visit on mobile to see the menu version.</p>
-  </div>
+  <main>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/mOjhG97DpT8?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/8pjkSDZoL-s?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ujDt_stiT4w?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/oomCksxHPjE?rel=0&modestbranding=1" allowfullscreen></iframe>
 
+      <iframe src="https://www.youtube.com/embed/tzC6nloNFDs?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/U8AFTeBjxhY?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/PAeliJA25-0?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/4DEW1qlblw0?rel=0&modestbranding=1" allowfullscreen></iframe>
+
+      <iframe src="https://www.youtube.com/embed/YKkwBj9pFDg?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/MNHLduM2W8k?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/8xxDju42OGU?rel=0&modestbranding=1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/-OzMIOBhDig?rel=0&modestbranding=1" allowfullscreen></iframe>
+    </div>
+  </main>
 </body>
 </html>
