@@ -82,13 +82,13 @@
     /* Flex container for logo + content side by side */
     .connect-content {
       display: flex;
-      gap: 80px; /* doubled gap */
+      gap: 40px;
       align-items: stretch;
     }
 
     /* Logo container */
     .logo-container {
-      flex: 0 0 900px; /* triple size */
+      flex: 0 0 300px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -101,14 +101,13 @@
       display: block;
     }
 
-    /* Content area next to logo */
+    /* Content area next to logo takes remaining width */
     .contact-content {
       flex: 1;
       display: flex;
       flex-direction: column;
     }
 
-    /* Let's Connect heading centered on top of contact content */
     .connect-section h1 {
       font-size: 36px;
       letter-spacing: 2px;
