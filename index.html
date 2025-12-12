@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Terry Austin – Video Portfolio</title>
+  <title>Terry Austin – Creative Director & Video Portfolio</title>
+
   <style>
     /* Reset */
     * {
@@ -16,7 +17,7 @@
       background: #000;
       font-family: Arial, sans-serif;
       color: #fff;
-      overflow-x: hidden; /* prevent horizontal scroll */
+      overflow-x: hidden;
     }
 
     body {
@@ -43,7 +44,7 @@
     nav.menu {
       display: flex;
       gap: 32px;
-      flex-grow: 1; /* push name/title right */
+      flex-grow: 1;
     }
 
     nav.menu a {
@@ -68,7 +69,7 @@
     /* Name & title on right */
     .name-title {
       display: flex;
-      align-items: baseline; /* baseline align text */
+      align-items: baseline;
       gap: 16px;
       white-space: nowrap;
     }
@@ -82,12 +83,31 @@
     }
 
     .title {
-      font-weight: 400; /* NOT bold */
-      font-size: 28px;  /* same size as name */
+      font-weight: 400;
+      font-size: 28px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #444;
       line-height: 1;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 120px 20px;
+      text-align: center;
+      background: #000;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 22px;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     /* Main fills remaining height */
@@ -96,7 +116,7 @@
       display: flex;
     }
 
-    /* Video grid container fills all remaining space */
+    /* Video grid container */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -106,7 +126,6 @@
       height: 100%;
     }
 
-    /* Videos fill grid cells with no spacing */
     .video-grid iframe {
       width: 100%;
       height: 100%;
@@ -128,20 +147,30 @@
     }
   </style>
 </head>
+
 <body>
+
+  <!-- TOP NAVIGATION -->
   <header class="top-bar">
     <nav class="menu">
       <a href="#featured" class="active">FEATURED</a>
       <a href="about.html">ABOUT</a>
       <a href="connect.html">CONTACT</a>
-
     </nav>
+
     <div class="name-title">
       <div class="name">TERRY AUSTIN</div>
       <div class="title">CINEMATOGRAPHER</div>
     </div>
   </header>
 
+  <!-- HERO SECTION (Creative Director positioning) -->
+  <section class="hero">
+    <h1>Terry Austin — Creative Director & Visual Storyteller</h1>
+    <p>Leading brand narratives, cinematic experiences, and multidisciplinary creative teams.</p>
+  </section>
+
+  <!-- VIDEO GRID -->
   <main>
     <div class="video-grid">
       <iframe src="https://www.youtube.com/embed/mOjhG97DpT8?rel=0&modestbranding=1" allowfullscreen></iframe>
@@ -160,7 +189,6 @@
       <iframe src="https://www.youtube.com/embed/-OzMIOBhDig?rel=0&modestbranding=1" allowfullscreen></iframe>
     </div>
   </main>
+
 </body>
 </html>
-
-
