@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Terry Austin – Creative Director & Video Portfolio</title>
+  <title>Terry Austin – Creative Director & Visual Storyteller</title>
 
   <style>
     /* Reset */
@@ -40,7 +40,7 @@
       z-index: 1000;
     }
 
-    /* Menu on left */
+    /* Navigation menu */
     nav.menu {
       display: flex;
       gap: 32px;
@@ -57,7 +57,6 @@
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
       transition: all 0.3s ease;
-      cursor: pointer;
     }
 
     nav.menu a:hover,
@@ -66,7 +65,7 @@
       border-bottom-color: #000;
     }
 
-    /* Name & title on right */
+    /* Name & title on right side */
     .name-title {
       display: flex;
       align-items: baseline;
@@ -84,39 +83,43 @@
 
     .title {
       font-weight: 400;
-      font-size: 28px;
+      font-size: 20px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #444;
       line-height: 1;
     }
 
-    /* Hero section */
+    /* HERO SECTION */
     .hero {
-      padding: 120px 20px;
+      padding: 120px 20px 80px;
       text-align: center;
       background: #000;
       color: #fff;
     }
 
     .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+      font-size: 46px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .hero p {
       font-size: 22px;
       max-width: 700px;
       margin: 0 auto;
+      line-height: 1.5;
+      color: #ddd;
     }
 
-    /* Main fills remaining height */
+    /* Main container */
     main {
       flex-grow: 1;
       display: flex;
     }
 
-    /* Video grid container */
+    /* Video grid */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -133,7 +136,7 @@
       display: block;
     }
 
-    /* Responsive */
+    /* Responsive adjustments */
     @media (max-width: 1024px) {
       .video-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -144,6 +147,14 @@
       .video-grid {
         grid-template-columns: 1fr;
       }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -153,18 +164,18 @@
   <!-- TOP NAVIGATION -->
   <header class="top-bar">
     <nav class="menu">
-      <a href="#featured" class="active">FEATURED</a>
-      <a href="about.html">ABOUT</a>
-      <a href="connect.html">CONTACT</a>
+      <a href="#featured" class="active">Featured</a>
+      <a href="about.html">About</a>
+      <a href="connect.html">Contact</a>
     </nav>
 
     <div class="name-title">
       <div class="name">TERRY AUSTIN</div>
-      <div class="title">CINEMATOGRAPHER</div>
+      <div class="title">CREATIVE DIRECTOR</div>
     </div>
   </header>
 
-  <!-- HERO SECTION (Creative Director positioning) -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <h1>Terry Austin — Creative Director & Visual Storyteller</h1>
     <p>Leading brand narratives, cinematic experiences, and multidisciplinary creative teams.</p>
